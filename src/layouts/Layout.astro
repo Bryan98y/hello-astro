@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
@@ -29,6 +29,7 @@
 							<img src="/github.png" alt="GitHub" />
 							<img src="/linkedin.png" alt="LinkedIn" />
 							<img src="/instagram.png" alt="Instagram" />
+							<img src="/whatsapp.png" alt="WhatsApp" />
 						</nav>
 					</div>
 				</div>
@@ -38,6 +39,29 @@
 </html>
 
 <style>
+	/* Media Query para móviles */
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column; /* Cambia de fila a columna */
+        gap: 1.5rem;            /* Espacio entre los bloques amontonados */
+        padding: 1rem 0;
+    }
+
+    .nav-principal {
+        flex-wrap: wrap;       /* Si los links son largos, saltan de línea */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-principal a {
+        font-size: 0.95rem;    /* Un poco más pequeño para móviles */
+    }
+
+    .redes {
+        justify-content: center;
+        width: 100%;
+    }
+}
 	html,
 	body {
 		background-color: #1f2937;
