@@ -9,6 +9,7 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<div class="stars"></div>
 		<header>
 			<div class="container">
 				<div class="navegacion">
@@ -35,6 +36,67 @@
 				</div>
 			</div>
 		</header>
+		<main class="hero">
+    <div class="hero-content">
+        <h1>Diseñando experiencias <span class="highlight">digitales únicas</span></h1>
+        <p>Desarrollador enfocado en crear interfaces modernas, rápidas y accesibles.</p>
+        <div class="hero-buttons">
+            <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
+            <a href="#contacto" class="btn-secondary">Hablemos</a>
+        </div>
+    </div>
+</main>
+
+<style>
+    .hero {
+        height: 80vh; /* Ocupa casi toda la pantalla inicial */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        color: white;
+        max-width: 800px;
+        line-height: 1.1;
+    }
+
+    .highlight {
+        color: #3498db; /* Un azul llamativo para resaltar */
+    }
+
+    .hero-content p {
+        color: #94a3b8;
+        font-size: 1.25rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        background-color: white;
+        color: #091a28;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-secondary {
+        border: 1px solid white;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+</style>
 	</body>
 </html>
 
