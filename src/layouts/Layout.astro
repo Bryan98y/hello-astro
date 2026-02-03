@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -9,15 +9,152 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<div class="container">
+				<div class="navegacion">
+					<div class="perfil">
+						<img src="/bryan.jpeg" alt="Bryan" class="bryan" />
+						<h2 class="nombre">Bryan Yandún</h2>
+					</div>
+
+					<nav class="nav-principal">
+						<a href="#inicio">Inicio</a>
+						<a href="#sobre-mi">Sobre mí</a>
+						<a href="#contacto">Contacto</a>
+						<a href="#proyectos">Proyectos</a>
+					</nav>
+
+					<div class="redes">
+						<img src="../../public/github.png" alt="GitHub" />
+						<img src="../../public/linkedin.png" alt="LinkedIn" />
+						<img src="../../public/whatsapp.png" alt="WhatsApp" />
+						<img src="../../public/gmail.png" alt="Email" />
+					</div>
+				</div>
+			</div>
+		</header>
 	</body>
 </html>
 
 <style>
 	html,
 	body {
+		background-color: #1F2937;
 		margin: 0;
+		padding: 0;
 		width: 100%;
-		height: 100%;
+		overflow-x: hidden; /* Evita scroll lateral accidental */
+	}
+	/* Reset básico para evitar espacios extra */
+	
+	.container {
+		background-color: #091a28;
+		padding: 0.8rem 2rem;
+		width: 100%;
+	}
+
+	.navegacion {
+		display: flex;
+		align-items: center;
+		justify-content: space-between; /* Esto crea el espacio entre los 3 bloques */
+		max-width: 1400px;
+		margin: 0 auto;
+		font-family:
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			"Helvetica Neue",
+			Arial,
+			"Noto Sans",
+			sans-serif;
+	}
+
+	/* IZQUIERDA: Foto y Nombre alineados */
+	.perfil {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		flex-shrink: 0; /* Evita que el nombre se achique */
+	}
+
+	.bryan {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		object-fit: cover;
+	}
+
+	.nombre {
+		color: white;
+		font-size: 1.2rem;
+		margin: 0;
+		white-space: nowrap; /* Evita que el nombre se rompa en dos líneas */
+	}
+
+	/* CENTRO: Menú de navegación */
+	.nav-principal {
+		display: flex;
+		gap: 2rem; /* Espacio entre palabras */
+	}
+
+	.nav-principal a {
+		font-family:
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			"Helvetica Neue",
+			Arial,
+			"Noto Sans",
+			sans-serif;
+
+		color: white;
+		text-decoration: none;
+		font-size: 1rem;
+		font-weight: 500;
+		position: relative;
+		padding: 4px 0;
+	}
+
+	/* El efecto de línea que querías */
+	.nav-principal a::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: #fff;
+		transition: width 0.3s ease;
+	}
+
+	.nav-principal a:hover::after {
+		width: 100%;
+	}
+
+	/* DERECHA: Iconos de Redes */
+	.redes {
+		display: flex;
+		gap: 1.2rem;
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.redes img {
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		filter: brightness(0) invert(1); /* Convierte iconos negros en blancos */
+		transition: opacity 0.2s;
+	}
+
+	.redes img:hover {
+		opacity: 0.7;
 	}
 </style>
